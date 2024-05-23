@@ -1,0 +1,25 @@
+observation_date,tracker_name,tracker_category,observation_value 
+2024-05-22,Sleep,Sleep,2 
+2024-05-22,HR Variability,Measurement,49 
+2024-05-22,Resting HR,Measurement,62 
+2024-05-22,PacePoints,Measurement,0.0 
+2024-05-22,Stability Score,Measurement,2 
+2024-05-21,Mentally demanding,Cognitive,2 
+2024-05-21,Lack of appetite,Gastrointestinal,0 
+2024-05-21,Lightheadedness,Brain,2 
+2024-05-21,Headache,Brain,1 
+2024-05-21,Migraine,Pain,0 
+2024-05-21,Shortness of breath,Heart and Lungs,2 
+2024-05-21,Diarrhea,Gastrointestinal,0 
+2024-05-21,Socially demanding,Social,1 
+2024-05-21,Anxiety,Brain,1 
+2024-05-21,Sleep,Sleep,1 
+2024-05-21,Tinnitus,Sensory,1 
+2024-05-21,Brain Fog,Brain,1 
+2024-05-21,Memory issues,Brain,1 
+2024-05-21,Nausea,Gastrointestinal,1 
+2024-05-21,Crash,Experience,1 
+2024-05-21,Emotionally stressful,Emotional,2 
+2024-05-21,Depression,Brain,1 
+2024-05-21,Physically active,Physical,2 
+2024-05-21,Infection,Experience,0 
