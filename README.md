@@ -4,6 +4,10 @@
 
 Heavily inspired by [healthkit-to-sqlite](https://github.com/dogsheep/healthkit-to-sqlite) and the rest of the [Dogsheep](https://dogsheep.github.io/) family.  Designed to be explored with [Datasette](https://datasette.io/).
 
+## Installation
+
+`pip install visible-to-sqlite`
+
 ## Usage
 
 Run: `visible-to-sqlite Visible_Data_Export.csv ./visible.db`
