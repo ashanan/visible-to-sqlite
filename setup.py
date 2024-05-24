@@ -10,6 +10,7 @@ setup(
     include_package_data=True,
     install_requires=[
         'Click',
+        'sqlite-utils'
     ],
     entry_points={
         'console_scripts': [
