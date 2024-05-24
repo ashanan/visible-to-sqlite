@@ -27,7 +27,3 @@ def cli(export_file):
                 {"tracker_category": row["tracker_category"]},
                 extracts={"tracker_category": "TrackerCategories"}),
             }, foreign_keys=[("tracker", "Trackers")])
-
-
-if __name__ == '__main__':
-    cli()
