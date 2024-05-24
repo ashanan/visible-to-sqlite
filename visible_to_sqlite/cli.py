@@ -9,9 +9,13 @@ import sqlite_utils
     type=click.Path(exists=True, file_okay=True, dir_okay=False, allow_dash=False),
     required=True,
 )
-def cli(export_file):
+@click.argument(
+    "db_path",
+    type=click.Path(file_okay=True, dir_okay=False, allow_dash=False),
+    required=True,
+)
+def cli(export_file, db_path):
     "Convert exported CSV from Visible app to a SQLite DB"
-    db_path = "./dev.db"
     db = sqlite_utils.Database(db_path)
 
     with open(export_file, newline='') as csvfile:
