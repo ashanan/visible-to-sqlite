@@ -13,3 +13,9 @@ Heavily inspired by [healthkit-to-sqlite](https://github.com/dogsheep/healthkit-
 Run: `visible-to-sqlite Visible_Data_Export.csv ./visible.db`
 
 And then probably: `datasette ./visible.db`
+
+## Data Model
+
+![Data model diagram with three tables, generated from a PlantUML file](./architecture/data_model.png)
+
+Generated with PlantUML ([source](./architecture/data_model.plantuml)).
