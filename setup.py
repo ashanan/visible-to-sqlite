@@ -1,10 +1,20 @@
 from setuptools import setup, find_packages
 
+
+def get_long_description():
+    with open(
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "README.md"),
+        encoding="utf8",
+    ) as fp:
+        return fp.read()
+
 setup(
     name='visible-to-sqlite',
     author='Avner Shanan',
     version='0.1.0',
     description="Convert exported CSV from Visible app to a SQLite DB",
+    long_description=get_long_description(),
+    long_description_content_type="text/markdown",
     license="Apache License, Version 2.0",
     packages=find_packages(),
     include_package_data=True,
