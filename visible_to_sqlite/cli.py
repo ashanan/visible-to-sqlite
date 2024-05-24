@@ -11,25 +11,22 @@ import sqlite_utils
 )
 def cli(export_file):
     "Convert exported CSV from Visible app to a SQLite DB"
-    db_path = "./visible.db"
+    db_path = "./dev.db"
     db = sqlite_utils.Database(db_path)
 
     with open(export_file, newline='') as csvfile:
         csvreader = csv.DictReader(csvfile)
         csvreader.fieldnames[-1] = csvreader.fieldnames[-1].strip()
         for row in csvreader:
-            click.echo(row)
-            click.echo(row["observation_value"])
             db["Observations"].insert({
                 "observation_date": row["observation_date"],
                 "value": row["observation_value"],
                 "tracker": db["Trackers"].lookup({
-                    "name":  row["tracker_name"],
-                    "tracker_category": db["TrackerCategories"].lookup({
-                        "name": row["tracker_category"]
-                    })
-                })
-            })
+                    "name":  row["tracker_name"]
+                },
+                {"tracker_category": row["tracker_category"]},
+                extracts={"tracker_category": "TrackerCategories"}),
+            }, foreign_keys=[("tracker", "Trackers")])
 
 
 if __name__ == '__main__':
