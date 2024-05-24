@@ -1,0 +1,26 @@
+@startuml
+object observations {
+	id
+	--
+	tracker: FK
+	observation_date
+	value
+}
+
+object trackers{
+	id
+	--
+	name
+	tracker_category: FK
+}
+
+object trackerCategories{
+	id
+	--
+	value
+}
+
+observations }--|| trackers
+trackers ||--{ trackerCategories
+
+@enduml
