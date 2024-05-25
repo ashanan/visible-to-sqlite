@@ -30,4 +30,6 @@ def cli(export_file, db_path):
                 },
                 {"tracker_category": row["tracker_category"]},
                 extracts={"tracker_category": "TrackerCategories"}),
-            }, foreign_keys=[("tracker", "Trackers")])
+            },
+            pk="id",
+            foreign_keys=[("tracker", "Trackers")])
