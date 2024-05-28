@@ -32,3 +32,26 @@ def test_upsert_creates_new_rows_when_no_match_exists(single_row_export_csv, db)
     utils.convert_csv_to_sqlite(csvreader, db)
 
     assert db.table("Observations").count == 1
+
+def test_upsert_updates_existing_row_when_match_exists(single_row_export_csv):
+    db = Database(memory=True)
+    row = {
+        "observation_date": "2024-05-22",
+        "tracker_name": "Sleep",
+        "tracker_category": "Sleep",
+        "observation_value": "1"
+    }
+    utils.save_observation(db, row)
+    table = db.table("Observations")
+
+    for row in table.rows:
+        original_value = int(row["value"])
+        assert original_value == 1
+
+    csvreader = csv.DictReader(single_row_export_csv)
+    utils.convert_csv_to_sqlite(csvreader, db)
+
+    assert db.table("Observations").count == 1
+    for row in table.rows:
+        final_value = int(row["value"])
+        assert final_value == 2
