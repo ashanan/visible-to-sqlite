@@ -1,3 +1,5 @@
+import datetime
+
 def convert_csv_to_sqlite(csvreader, db):
     csvreader.fieldnames[-1] = csvreader.fieldnames[-1].strip()
     for row in csvreader:
@@ -11,4 +13,5 @@ def convert_csv_to_sqlite(csvreader, db):
             extracts={"tracker_category": "TrackerCategories"}),
         },
         pk="id",
-        foreign_keys=[("tracker", "Trackers")])
+        foreign_keys=[("tracker", "Trackers")],
+        columns={"observation_date": datetime.date})
