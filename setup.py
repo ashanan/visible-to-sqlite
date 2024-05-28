@@ -11,7 +11,7 @@ def get_long_description():
 setup(
     name='visible-to-sqlite',
     author='Avner Shanan',
-    version='0.1.0',
+    version='1.0.0',
     description="Convert exported CSV from Visible app to a SQLite DB",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
